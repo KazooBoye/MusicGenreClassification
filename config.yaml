@@ -1,0 +1,97 @@
+# Music Genre Classification Configuration
+
+# Audio Processing
+audio:
+  sample_rate: 22050
+  segment_length: 3.0  # seconds
+  n_fft: 2048
+  hop_length: 512
+  mono: true
+
+# Feature Extraction
+features:
+  mfcc:
+    n_mfcc: 40
+    n_mels: 128
+  chroma:
+    n_chroma: 12
+  spectral:
+    n_bands: 6  # for spectral contrast
+  
+  melspectrogram:
+    n_mels: 128
+    fmin: 0
+    fmax: 8000
+
+# Model Hyperparameters
+models:
+  knn:
+    n_neighbors: 5
+    weights: 'distance'
+    metric: 'euclidean'
+  
+  svm:
+    C: 10.0
+    gamma: 'scale'
+    kernel: 'rbf'
+    max_iter: 1000
+  
+  random_forest:
+    n_estimators: 200
+    max_depth: 30
+    min_samples_split: 5
+    min_samples_leaf: 2
+    random_state: 42
+  
+  mlp:
+    hidden_layers: [256, 128, 64]
+    dropout: 0.3
+    learning_rate: 0.001
+    epochs: 100
+    batch_size: 32
+    patience: 15
+  
+  gmm:
+    n_components: 16
+    covariance_type: 'diag'
+    max_iter: 200
+    random_state: 42
+  
+  cnn:
+    conv_channels: [32, 64]
+    kernel_size: 3
+    pool_size: 2
+    dense_units: [128, 64]
+    dropout: 0.4
+    learning_rate: 0.0001
+    epochs: 100
+    batch_size: 32
+    patience: 20
+
+# Training Parameters
+training:
+  test_size: 0.2
+  val_size: 0.1
+  random_state: 42
+  stratify: true
+
+# Noise Reduction (Inference)
+noise_reduction:
+  enable: true
+  highpass_cutoff: 80  # Hz
+  spectral_gate_threshold: 0.03
+
+# Paths
+paths:
+  data_raw: 'data/raw'
+  data_processed: 'data/processed'
+  data_features: 'data/features'
+  models: 'models'
+  outputs: 'outputs'
+  logs: 'outputs/logs'
+  plots: 'outputs/plots'
+
+# Logging
+logging:
+  level: 'INFO'
+  format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'

@@ -1,0 +1,22 @@
+# Data Placeholder
+
+Place your audio dataset here with the following structure:
+
+```
+data/raw/
+├── genre1/
+│   ├── audio1.wav
+│   ├── audio2.wav
+│   └── ...
+├── genre2/
+│   ├── audio1.wav
+│   └── ...
+└── ...
+```
+
+Supported audio formats: WAV, MP3, AU
+
+Recommended datasets:
+- GTZAN Genre Collection
+- FMA (Free Music Archive) small
+- Custom dataset with similar structure
