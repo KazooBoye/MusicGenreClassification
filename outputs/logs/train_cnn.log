@@ -1,0 +1,108 @@
+2026-01-05 21:31:09,496 - __main__ - INFO - Starting CNN model training
+2026-01-05 21:31:09,496 - __main__ - INFO - Using device: cpu
+2026-01-05 21:31:09,541 - __main__ - INFO - Found 9990 preprocessed segments
+2026-01-05 21:31:09,542 - src.data.dataset_loader - INFO - Discovered 10 genres: ['blues', 'classical', 'country', 'disco', 'hiphop', 'jazz', 'metal', 'pop', 'reggae', 'rock']
+2026-01-05 21:31:09,542 - __main__ - INFO - Extracting mel-spectrograms from 9990 segments
+2026-01-05 21:32:08,370 - __main__ - INFO - Mel-spectrogram shape: (9990, 128, 130)
+2026-01-05 21:32:08,957 - __main__ - INFO - Model architecture:
+CNNModel(
+  (conv1): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (bn1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (pool1): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (conv2): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (pool2): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (dropout): Dropout(p=0.4, inplace=False)
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (fc_layers): ModuleList(
+    (0): Linear(in_features=65536, out_features=128, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.4, inplace=False)
+    (3): Linear(in_features=128, out_features=64, bias=True)
+    (4): ReLU()
+    (5): Dropout(p=0.4, inplace=False)
+  )
+  (output): Linear(in_features=64, out_features=10, bias=True)
+)
+2026-01-05 21:32:09,582 - __main__ - INFO - Training CNN model
+2026-01-05 21:33:34,815 - __main__ - INFO - Epoch 1/100 - Loss: 1.9751, Acc: 0.2828, Val Loss: 1.5371, Val Acc: 0.5385
+2026-01-05 21:34:48,319 - __main__ - INFO - Epoch 2/100 - Loss: 1.5888, Acc: 0.4365, Val Loss: 1.2405, Val Acc: 0.6186
+2026-01-05 21:36:11,638 - __main__ - INFO - Epoch 3/100 - Loss: 1.3272, Acc: 0.5323, Val Loss: 1.0217, Val Acc: 0.7007
+2026-01-05 21:37:31,720 - __main__ - INFO - Epoch 4/100 - Loss: 1.1101, Acc: 0.6190, Val Loss: 0.9222, Val Acc: 0.7297
+2026-01-05 21:38:44,505 - __main__ - INFO - Epoch 5/100 - Loss: 0.9240, Acc: 0.6851, Val Loss: 0.8396, Val Acc: 0.7477
+2026-01-05 21:39:57,086 - __main__ - INFO - Epoch 6/100 - Loss: 0.7582, Acc: 0.7453, Val Loss: 0.7614, Val Acc: 0.7718
+2026-01-05 21:41:08,869 - __main__ - INFO - Epoch 7/100 - Loss: 0.6119, Acc: 0.7941, Val Loss: 0.7522, Val Acc: 0.7688
+2026-01-05 21:42:21,422 - __main__ - INFO - Epoch 8/100 - Loss: 0.5085, Acc: 0.8285, Val Loss: 0.7535, Val Acc: 0.7698
+2026-01-05 21:43:34,558 - __main__ - INFO - Epoch 9/100 - Loss: 0.4360, Acc: 0.8577, Val Loss: 0.7072, Val Acc: 0.7898
+2026-01-05 21:44:56,241 - __main__ - INFO - Epoch 10/100 - Loss: 0.3478, Acc: 0.8880, Val Loss: 0.6635, Val Acc: 0.7998
+2026-01-05 21:46:08,356 - __main__ - INFO - Epoch 11/100 - Loss: 0.3085, Acc: 0.8999, Val Loss: 0.6673, Val Acc: 0.7998
+2026-01-05 21:47:20,065 - __main__ - INFO - Epoch 12/100 - Loss: 0.2613, Acc: 0.9153, Val Loss: 0.7065, Val Acc: 0.7878
+2026-01-05 21:48:32,414 - __main__ - INFO - Epoch 13/100 - Loss: 0.2341, Acc: 0.9209, Val Loss: 0.7048, Val Acc: 0.7958
+2026-01-05 21:49:49,870 - __main__ - INFO - Epoch 14/100 - Loss: 0.2114, Acc: 0.9312, Val Loss: 0.7484, Val Acc: 0.8008
+2026-01-05 21:51:01,899 - __main__ - INFO - Epoch 15/100 - Loss: 0.2041, Acc: 0.9338, Val Loss: 0.7290, Val Acc: 0.8048
+2026-01-05 21:52:14,402 - __main__ - INFO - Epoch 16/100 - Loss: 0.1802, Acc: 0.9425, Val Loss: 0.7405, Val Acc: 0.8088
+2026-01-05 21:53:27,050 - __main__ - INFO - Epoch 17/100 - Loss: 0.1561, Acc: 0.9491, Val Loss: 0.7403, Val Acc: 0.8168
+2026-01-05 21:54:39,754 - __main__ - INFO - Epoch 18/100 - Loss: 0.1441, Acc: 0.9578, Val Loss: 0.7200, Val Acc: 0.8168
+2026-01-05 21:55:52,277 - __main__ - INFO - Epoch 19/100 - Loss: 0.1442, Acc: 0.9554, Val Loss: 0.7187, Val Acc: 0.8128
+2026-01-05 21:57:04,722 - __main__ - INFO - Epoch 20/100 - Loss: 0.1499, Acc: 0.9509, Val Loss: 0.7412, Val Acc: 0.8098
+2026-01-05 21:58:17,180 - __main__ - INFO - Epoch 21/100 - Loss: 0.1380, Acc: 0.9567, Val Loss: 0.7628, Val Acc: 0.8008
+2026-01-05 21:59:29,549 - __main__ - INFO - Epoch 22/100 - Loss: 0.1343, Acc: 0.9587, Val Loss: 0.7853, Val Acc: 0.7948
+2026-01-05 22:00:45,156 - __main__ - INFO - Epoch 23/100 - Loss: 0.1195, Acc: 0.9597, Val Loss: 0.7458, Val Acc: 0.8118
+2026-01-05 22:02:04,740 - __main__ - INFO - Epoch 24/100 - Loss: 0.1184, Acc: 0.9627, Val Loss: 0.7390, Val Acc: 0.8128
+2026-01-05 22:03:19,219 - __main__ - INFO - Epoch 25/100 - Loss: 0.1087, Acc: 0.9641, Val Loss: 0.8065, Val Acc: 0.8008
+2026-01-05 22:04:33,137 - __main__ - INFO - Epoch 26/100 - Loss: 0.0990, Acc: 0.9674, Val Loss: 0.7639, Val Acc: 0.8148
+2026-01-05 22:05:45,174 - __main__ - INFO - Epoch 27/100 - Loss: 0.0973, Acc: 0.9690, Val Loss: 0.8536, Val Acc: 0.7948
+2026-01-05 22:06:57,884 - __main__ - INFO - Epoch 28/100 - Loss: 0.1078, Acc: 0.9644, Val Loss: 0.7748, Val Acc: 0.8128
+2026-01-05 22:08:14,964 - __main__ - INFO - Epoch 29/100 - Loss: 0.1057, Acc: 0.9655, Val Loss: 0.7457, Val Acc: 0.8218
+2026-01-05 22:09:28,172 - __main__ - INFO - Epoch 30/100 - Loss: 0.0892, Acc: 0.9723, Val Loss: 0.7911, Val Acc: 0.8198
+2026-01-05 22:10:42,025 - __main__ - INFO - Epoch 31/100 - Loss: 0.0917, Acc: 0.9685, Val Loss: 0.8347, Val Acc: 0.8218
+2026-01-05 22:11:55,230 - __main__ - INFO - Epoch 32/100 - Loss: 0.0935, Acc: 0.9695, Val Loss: 0.8422, Val Acc: 0.8178
+2026-01-05 22:13:18,132 - __main__ - INFO - Epoch 33/100 - Loss: 0.0906, Acc: 0.9707, Val Loss: 0.8126, Val Acc: 0.8238
+2026-01-05 22:14:38,129 - __main__ - INFO - Epoch 34/100 - Loss: 0.0757, Acc: 0.9795, Val Loss: 0.8008, Val Acc: 0.8208
+2026-01-05 22:16:07,262 - __main__ - INFO - Epoch 35/100 - Loss: 0.0774, Acc: 0.9744, Val Loss: 0.8522, Val Acc: 0.8048
+2026-01-05 22:17:35,940 - __main__ - INFO - Epoch 36/100 - Loss: 0.0826, Acc: 0.9734, Val Loss: 0.9015, Val Acc: 0.8128
+2026-01-05 22:19:07,863 - __main__ - INFO - Epoch 37/100 - Loss: 0.0709, Acc: 0.9780, Val Loss: 0.9784, Val Acc: 0.7948
+2026-01-05 22:20:39,991 - __main__ - INFO - Epoch 38/100 - Loss: 0.0744, Acc: 0.9741, Val Loss: 0.8185, Val Acc: 0.8078
+2026-01-05 22:22:13,739 - __main__ - INFO - Epoch 39/100 - Loss: 0.0730, Acc: 0.9787, Val Loss: 0.8629, Val Acc: 0.8138
+2026-01-05 22:23:48,614 - __main__ - INFO - Epoch 40/100 - Loss: 0.0621, Acc: 0.9800, Val Loss: 0.9232, Val Acc: 0.8098
+2026-01-05 22:25:23,344 - __main__ - INFO - Epoch 41/100 - Loss: 0.0755, Acc: 0.9771, Val Loss: 0.9187, Val Acc: 0.8078
+2026-01-05 22:26:55,836 - __main__ - INFO - Epoch 42/100 - Loss: 0.0705, Acc: 0.9777, Val Loss: 0.8802, Val Acc: 0.8118
+2026-01-05 22:28:24,660 - __main__ - INFO - Epoch 43/100 - Loss: 0.0745, Acc: 0.9770, Val Loss: 0.8903, Val Acc: 0.8148
+2026-01-05 22:29:54,016 - __main__ - INFO - Epoch 44/100 - Loss: 0.0665, Acc: 0.9797, Val Loss: 0.8513, Val Acc: 0.8088
+2026-01-05 22:31:25,697 - __main__ - INFO - Epoch 45/100 - Loss: 0.0725, Acc: 0.9753, Val Loss: 0.9565, Val Acc: 0.8088
+2026-01-05 22:32:59,320 - __main__ - INFO - Epoch 46/100 - Loss: 0.0704, Acc: 0.9778, Val Loss: 0.9050, Val Acc: 0.8108
+2026-01-05 22:34:31,416 - __main__ - INFO - Epoch 47/100 - Loss: 0.0636, Acc: 0.9801, Val Loss: 0.9366, Val Acc: 0.8218
+2026-01-05 22:36:08,118 - __main__ - INFO - Epoch 48/100 - Loss: 0.0681, Acc: 0.9805, Val Loss: 1.0343, Val Acc: 0.8068
+2026-01-05 22:37:44,497 - __main__ - INFO - Epoch 49/100 - Loss: 0.0514, Acc: 0.9843, Val Loss: 0.9913, Val Acc: 0.8098
+2026-01-05 22:39:19,659 - __main__ - INFO - Epoch 50/100 - Loss: 0.0627, Acc: 0.9807, Val Loss: 0.9158, Val Acc: 0.8148
+2026-01-05 22:40:53,412 - __main__ - INFO - Epoch 51/100 - Loss: 0.0715, Acc: 0.9775, Val Loss: 0.9545, Val Acc: 0.8028
+2026-01-05 22:42:27,696 - __main__ - INFO - Epoch 52/100 - Loss: 0.0584, Acc: 0.9813, Val Loss: 0.8811, Val Acc: 0.8188
+2026-01-05 22:44:00,928 - __main__ - INFO - Epoch 53/100 - Loss: 0.0540, Acc: 0.9837, Val Loss: 0.8615, Val Acc: 0.8178
+2026-01-05 22:44:00,928 - __main__ - INFO - Early stopping at epoch 53
+2026-01-05 22:44:00,947 - __main__ - INFO - Evaluating model
+2026-01-05 22:44:09,072 - src.evaluation.metrics - INFO - Accuracy: 0.7959
+2026-01-05 22:44:09,072 - src.evaluation.metrics - INFO - F1 Score (macro): 0.7936
+2026-01-05 22:44:09,072 - __main__ - INFO - 
+Classification Report:
+              precision    recall  f1-score   support
+
+       blues       0.69      0.82      0.75       200
+   classical       0.88      0.98      0.93       200
+     country       0.69      0.74      0.72       200
+       disco       0.76      0.78      0.77       200
+      hiphop       0.84      0.81      0.82       200
+        jazz       0.86      0.88      0.87       198
+       metal       0.91      0.90      0.90       200
+         pop       0.80      0.79      0.80       201
+      reggae       0.82      0.72      0.77       200
+        rock       0.70      0.54      0.61       200
+
+    accuracy                           0.80      1999
+   macro avg       0.80      0.80      0.79      1999
+weighted avg       0.80      0.80      0.79      1999
+
+2026-01-05 22:44:09,190 - src.models.utils - INFO - Results saved to outputs/cnn_results.json
+2026-01-05 22:44:09,191 - src.models.utils - INFO - Results saved to models/cnn_config.json
+2026-01-05 22:44:10,340 - src.evaluation.visualization - INFO - Confusion matrix saved to outputs/plots/cnn_confusion_matrix.png
+2026-01-05 22:44:11,153 - src.evaluation.visualization - INFO - Training history saved to outputs/plots/cnn_training_history.png
+2026-01-05 22:44:11,153 - __main__ - INFO - CNN training completed successfully

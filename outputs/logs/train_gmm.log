@@ -1,0 +1,32 @@
+2026-01-05 21:30:59,330 - __main__ - INFO - Starting GMM model training
+2026-01-05 21:30:59,331 - __main__ - INFO - Loaded preprocessed features from data/features
+2026-01-05 21:30:59,332 - src.data.dataset_loader - INFO - Discovered 10 genres: ['blues', 'classical', 'country', 'disco', 'hiphop', 'jazz', 'metal', 'pop', 'reggae', 'rock']
+2026-01-05 21:30:59,333 - __main__ - INFO - Feature matrix shape: (999, 126)
+2026-01-05 21:30:59,337 - __main__ - INFO - Training GMM model
+2026-01-05 21:30:59,445 - __main__ - INFO - Evaluating model
+2026-01-05 21:31:00,039 - src.evaluation.metrics - INFO - Accuracy: 0.6200
+2026-01-05 21:31:00,039 - src.evaluation.metrics - INFO - F1 Score (macro): 0.6266
+2026-01-05 21:31:00,039 - __main__ - INFO - 
+Classification Report:
+              precision    recall  f1-score   support
+
+       blues       0.61      0.70      0.65        20
+   classical       0.90      0.90      0.90        20
+     country       0.50      0.45      0.47        20
+       disco       0.44      0.55      0.49        20
+      hiphop       0.65      0.55      0.59        20
+        jazz       0.81      0.65      0.72        20
+       metal       1.00      0.60      0.75        20
+         pop       0.69      0.55      0.61        20
+      reggae       0.52      0.70      0.60        20
+        rock       0.42      0.55      0.48        20
+
+    accuracy                           0.62       200
+   macro avg       0.65      0.62      0.63       200
+weighted avg       0.65      0.62      0.63       200
+
+2026-01-05 21:31:00,045 - src.models.utils - INFO - Model saved to models/gmm.pkl
+2026-01-05 21:31:00,046 - src.models.utils - INFO - Model saved to models/gmm_scaler.pkl
+2026-01-05 21:31:00,047 - src.models.utils - INFO - Results saved to outputs/gmm_results.json
+2026-01-05 21:31:01,051 - src.evaluation.visualization - INFO - Confusion matrix saved to outputs/plots/gmm_confusion_matrix.png
+2026-01-05 21:31:01,052 - __main__ - INFO - GMM training completed successfully

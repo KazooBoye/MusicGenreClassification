@@ -75,7 +75,4 @@ data/features/*
 !data/features/.gitkeep
 models/*.pkl
 models/*.pth
-outputs/logs/*
-outputs/plots/*
-outputs/*.json
 !outputs/.gitkeep
