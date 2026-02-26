@@ -129,7 +129,3 @@ Analysis and results are documented in `notebooks/Report.ipynb`, including:
 - Model comparison
 - Confusion matrices
 - Performance metrics
-
-## License
-
-This project is for educational purposes as part of a Machine Learning and Data Mining course.
